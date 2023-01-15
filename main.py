@@ -17,10 +17,12 @@ song = pygame.mixer.Sound("Chronomia.mp3")
 tap = pygame.mixer.Sound("tap.wav")
 to_draw = []
 held = []
+holds = []
+beat_no = 0
 
 
 def main():
-    global run
+    global run, beat_no
     # playing the song, setting previous time to 0, locking all inputs to the program when selected
     song.play()
     prev = 0
@@ -86,20 +88,47 @@ def main():
                             tap.stop()
                             tap.play()
                             to_draw.remove(notes[lane + 1])
+                            if abs(notes[lane + 1].time) <= 50:
+                                settings.amounts[0] += 1
+                            elif abs(notes[lane + 1].time) <= 100:
+                                settings.amounts[1] += 1
+                            else:
+                                settings.amounts[2] += 1
                         if type(notes[lane + 1]) == Hold:
                             tap.stop()
                             tap.play()
                             notes[lane + 1].is_hit = True
                             held.append(notes[lane + 1])
+                            if abs(notes[lane + 1].time) <= 50:
+                                settings.amounts[0] += 1
+                            elif abs(notes[lane + 1].time) <= 100:
+                                settings.amounts[1] += 1
+                            else:
+                                settings.amounts[2] += 1
+
+        # code to append hold notes into holds
+        for lane in range(4):
+            if notes.get(lane + 1):
+                if type(notes[lane + 1]) == Hold and notes[lane + 1].time < 0:
+                    if notes[lane + 1] not in holds:
+                        holds.append(notes[lane + 1])
+
+        # code to check mouse position for arcs
         if notes.get(5):
+            if notes[5] not in holds:
+                holds.append(notes[5])
             points = notes[5].get_rect(settings)
             if points[0][1] >= settings.judge_line + 10 >= points[3][1]:
                 left = gfs.get_x_in_line(settings.judge_line + 10, [points[0], points[3]])
                 right = gfs.get_x_in_line(settings.judge_line + 10, [points[1], points[2]])
                 if left - 25 <= mouse.position <= right + 25:
                     notes[5].is_hit = True
+                    if notes[5] not in held:
+                        held.append(notes[5])
                 else:
                     notes[5].is_hit = False
+                    if notes[5] in held:
+                        held.remove(notes[5])
 
         # filling screen with white background
         screen.fill((255, 255, 255))
@@ -108,6 +137,11 @@ def main():
         current = pygame.time.get_ticks()
         diff = current - prev
         prev = pygame.time.get_ticks()
+
+        if current > beat_no * 60000 / settings.bpm:
+            beat_no += 1
+            settings.amounts[0] += len(held)
+            settings.amounts[3] += len(holds) - len(held)
 
         # moving arc catcher (square at the bottom of the screen)
         x, y = pygame.mouse.get_rel()
@@ -118,15 +152,21 @@ def main():
             if type(note) == Tap:
                 if note.time <= -150:
                     to_draw.remove(note)
+                    settings.amounts[3] += 1
             if type(note) == Hold:
                 if note.time + note.length <= -150:
                     to_draw.remove(note)
+                    holds.remove(note)
+                    settings.amounts[3] += 1
                 if note.time + note.length <= 0 and note in held:
                     held.remove(note)
+                    holds.remove(note)
                     to_draw.remove(note)
             if type(note) == Arc:
                 if note.time + note.duration <= -150:
                     to_draw.remove(note)
+                    if note in held:
+                        held.remove(note)
             else:
                 break
 

@@ -35,6 +35,9 @@ class Settings:
         self.lanes = (500, [50, 50, 50, 50])
         self.judge_line = 700
 
+        self.amounts = [0, 0, 0, 0]
+        self.score = 0
+
 
 class Note:
     def __init__(self, time):
