@@ -2,252 +2,591 @@ song=Chronomia.mp3
 offset=4000
 bpm=227
 
-0 tap 2
-4 tap 3
-5.5 tap 1
-7 tap 3
-7.5 tap 2
-8.5 tap 1
+0 tap 3
+4 tap 2
+5.5 tap 4
+7 tap 2
+7.5 tap 3
+8.5 tap 2
 9 tap 3
 12 tap 1
 13 tap 2
 14 tap 3
 15 tap 4
-16 tap 3
-20 tap 1
+16 tap 2
+20 tap 2
 21.5 tap 4
 23 tap 3
 23.5 tap 2
-28 hold 1 1
-29 hold 2 1
-30 hold 4 1
-31 hold 3 1
+28 tap 1
+29 tap 2
+30 tap 3
+31 tap 4
 32 hold 2 4
-36 hold 3 1.5
-37.5 tap 2
-39 tap 3
-40 tap 4
+36 hold 1 1.5
+37.5 hold 2 1.5
+39 hold 3 1
 40 tap 2
+40 tap 4
 41.5 tap 1
 41.5 tap 3
-43 hold 1 4
+43 hold 2 4
 43 hold 4 4
-47 tap 2
+47 tap 1
 47.5 tap 3
-48 tap 3
-49.5 tap 1
-51 tap 1
+48 tap 4
+49.5 tap 3
+51 tap 2
 52 tap 1
-53.5 tap 1
-55 tap 1
-56 tap 1
+53.5 tap 2
+55 tap 3
+56 hold 4 3
 59 tap 1
-59.5 tap 1
+59.5 hold 3 4.5
 64 tap 1
 65.5 tap 1
 67 tap 1
 68.5 tap 1
-72 tap 1
-73 tap 1
-74 tap 1
-75 tap 1
-76 tap 1
-77 tap 1
-78 tap 1
-79 tap 1
+72 hold 2 6
+78 hold 3 2
 80 tap 1
-81 tap 1
-82 tap 1
-83 tap 1
-84 tap 1
+81.5 tap 2
+83 hold 2 2
 85 tap 1
-86 tap 1
-87 tap 1
-88 tap 1
-89 tap 1
-90 tap 1
-91 tap 1
-92 tap 1
-93 tap 1
-94 tap 1
-95 tap 1
-96 tap 1
-97 tap 1
-98 tap 1
-99 tap 1
-100 tap 1
-101 tap 1
-101.5 tap 2
-102.5 tap 4
-103 tap 2
-103.25 tap 3
-103.5 tap 2
-103.75 tap 3
-104 tap 1
-104 tap 4
-105 tap 2
-106 tap 2
-107 tap 2
-108 tap 2
-109 tap 2
-110 tap 2
-111 tap 2
-112 tap 2
-113 tap 2
-114 tap 2
-115 tap 2
-116 tap 2
+86 tap 3
+87 tap 4
+88 tap 3
+89.5 tap 2
+91 hold 1 3
+94 tap 2
+94.5 tap 3
+95 tap 4
+96 tap 4
+97.5 tap 3
+99 hold 3 5
+104 hold 2 6
+110 hold 3 2
+112 tap 1
+113.5 tap 2
+115 hold 2 2
 117 tap 1
-118 tap 1
-119 tap 1
-120 tap 1
-121 tap 1
-122 tap 1
-123 tap 1
-124 tap 1
-125 tap 1
-126 tap 1
-127 tap 1
-128 tap 1
-129 tap 1
-130 tap 1
-131 tap 1
-132 tap 1
-133 tap 1
-134 tap 1
-135 tap 1
+118 tap 3
+119 tap 4
+120 tap 3
+121.5 tap 2
+123 hold 1 3
+126 tap 2
+126.5 tap 3
+127 tap 4
+128 tap 4
+129.5 tap 3
+131 hold 3 5
 136 tap 1
 136.5 tap 2
-137 tap 4
-137.25 tap 2
+137 tap 3
+137.25 tap 4
 137.5 tap 3
-138 tap 1
+138 tap 2
 138.5 tap 1
-138.75 tap 3
-139 tap 2
-139.5 tap 4
+138.75 tap 2
+139 tap 1
+139.5 tap 3
 140 tap 3
-140.25 tap 2
+140.25 tap 4
 140.5 tap 3
 141 tap 1
-141.5 tap 2
-141.75 tap 3
-142 tap 2
+141.5 tap 3
+141.75 tap 2
+142 tap 3
 142.5 tap 4
 143 tap 3
 143.5 tap 2
 144 tap 1
-144 tap 4
-145.5 tap 1
+145.5 tap 3
 145.5 tap 4
 146.5 tap 2
 146.5 tap 3
 147.5 tap 1
-147.5 tap 4
-148.5 tap 1
-148.5 tap 3
-149 tap 1
-150 tap 1
-151 tap 1
-152 tap 1
-153 tap 1
+147.5 tap 2
+148.5 tap 4
+149 tap 3
+149.5 tap 2
+150.5 tap 1
+151 tap 2
+151.5 tap 3
+153 tap 2
+153.5 tap 3
 154 tap 1
-155 tap 1
-156 tap 1
-157 tap 1
-158 tap 1
-159 tap 1
-160 tap 1
-161 tap 1
-162 tap 1
+154.5 tap 2
+155 tap 3
+155.5 hold 4 1
+156.5 hold 3 1
+157.5 tap 1
+157.75 tap 2
+158 tap 4
+158.25 tap 3
+158.5 tap 1
+158.75 tap 2
+159 tap 4
+159.25 tap 3
+159.5 tap 1
+159.75 tap 2
+160 tap 3
+160 tap 4
+160.5 tap 3
+160.5 tap 4
+161.5 tap 3
+161.5 tap 4
 163 tap 1
-164 tap 1
-165 tap 1
-166 tap 1
-167 tap 1
-168 tap 1
-169 tap 1
-170 tap 1
+163 tap 2
+163.5 tap 1
+163.5 tap 2
+164.5 tap 1
+164.5 tap 2
+168 tap 3
+168 tap 4
+168.5 tap 3
+168.5 tap 4
+169.5 tap 3
+169.5 tap 4
 171 tap 1
-172 tap 1
-173 tap 1
-174 tap 1
-175 tap 1
-176 tap 1
-177 tap 1
-178 tap 1
-179 tap 1
-180 tap 1
-181 tap 1
-182 tap 1
-183 tap 1
-184 tap 1
-185 tap 1
-186 tap 1
-187 tap 1
-188 tap 1
-189 tap 1
-190 tap 1
-191 tap 1
-192 tap 1
-193 tap 1
-194 tap 1
-195 tap 1
-196 tap 1
-197 tap 1
-198 tap 1
-199 tap 1
-200 tap 1
-201 tap 1
-202 tap 1
-203 tap 1
-204 tap 1
-205 tap 1
-206 tap 1
-207 tap 1
-208 tap 1
-209 tap 1
-210 tap 1
-211 tap 1
+171 tap 2
+171.5 tap 1
+171.5 tap 2
+172.5 tap 1
+172.5 tap 2
+176 tap 2
+177 tap 2
+177 arc 1 5 1
+178 tap 2
+178 arc 5 1 1
+179 tap 2
+179 arc 1 5 1
+180 tap 2
+180 arc 5 1 1
+181 tap 2
+181 arc 1 5 1
+182 tap 2
+182 arc 5 1 1
+183 tap 2
+183 arc 1 5 1
+184 tap 2
+184 arc 5 1 2
+185 tap 2
+186 tap 2
+186 arc 1 5 1
+187 tap 2
+187 arc 5 1 1
+188 tap 2
+188 arc 1 5 2
+189 tap 2
+190 tap 2
+190 arc 5 1 1
+191 tap 2
+191 arc 1 5 1
+192 tap 2
+192 arc 5 1 1.5
+193 tap 2
+193.5 arc 1 5 0.5
+194 tap 2
+195 tap 2
+196 tap 2
+197 tap 2
+198 tap 2
+199 tap 2
+200 tap 2
+200.5 tap 3
+201 tap 4
+202 tap 2
+202.5 tap 1
+203.5 tap 3
+204 tap 4
+205 tap 4
+209 tap 2
+209 tap 3
+209 tap 4
+210.5 tap 1
+210.5 tap 3
+210.5 tap 4
 212 tap 1
-213 tap 1
-214 tap 1
-215 tap 1
-216 tap 1
+212 tap 2
+212 tap 4
+213.5 tap 1
+213.5 tap 2
+213.5 tap 3
 217 tap 1
-218 tap 1
-219 tap 1
+217 tap 2
+217 tap 3
+218.5 tap 1
+218.5 tap 2
+218.5 tap 4
 220 tap 1
-221 tap 1
-222 tap 1
-223 tap 1
-224 tap 1
-225 tap 1
-226 tap 1
-227 tap 1
-228 tap 1
-229 tap 1
-230 tap 1
-231 tap 1
-232 tap 1
-233 tap 1
-234 tap 1
-235 tap 1
-236 tap 1
-237 tap 1
-238 tap 1
-239 tap 1
-240 tap 1
-241 tap 1
-242 tap 1
-243 tap 1
-244 tap 1
-245 tap 1
-246 tap 1
-247 tap 1
-248 tap 1
-249 tap 1
-250 hold 1 6
-252 hold 4 4
-254 hold 2 2
-256 tap 3
+220 tap 3
+220 tap 4
+221.5 tap 2
+221.5 tap 3
+221.5 tap 4
+224 tap 2
+224 tap 3
+228 tap 2
+228 tap 3
+232 tap 2
+232 tap 3
+236 tap 2
+236 tap 3
+240 tap 2
+240 tap 3
+244 tap 2
+244 tap 3
+248 tap 2
+248 tap 3
+250 tap 1
+252 tap 2
+254 tap 3
+256 hold 4 4
+260 tap 2
+261.5 tap 3
+263 tap 1
+263.5 tap 2
+264.5 tap 3
+265 tap 4
+268 tap 1
+268 tap 4
+269 tap 2
+269 tap 4
+270 tap 1
+270 tap 3
+271 tap 1
+271 tap 4
+272 hold 3 4
+276 tap 2
+277.5 tap 4
+278.5 tap 3
+279 hold 2 5
+284 tap 1
+284 tap 3
+285 tap 2
+285 tap 4
+286 tap 2
+286 tap 4
+287 tap 1
+287 tap 3
+288 hold 4 4
+292 tap 1
+293.5 tap 2
+295 tap 3
+296 tap 1
+296 tap 2
+296 tap 4
+297.5 tap 1
+297.5 tap 3
+297.5 tap 4
+299 hold 2 4
+299 hold 3 4
+299 hold 4 4
+303 tap 1
+303.5 tap 2
+304 tap 3
+305.5 tap 4
+307 tap 3
+308 tap 2
+309.5 tap 1
+311 tap 2
+312 hold 3 3
+315 tap 2
+315.5 hold 2 3.5
+319 tap 3
+319.5 tap 4
+320 tap 1
+321.5 tap 2
+323 tap 3
+324 tap 4
+325.5 tap 3
+327 tap 2
+328 tap 1
+328 tap 2
+329.5 tap 2
+329.5 tap 3
+331 tap 3
+331 tap 4
+332 tap 2
+332 tap 3
+333.5 tap 1
+333.5 tap 2
+335 tap 2
+335 tap 3
+336 tap 1
+336 tap 4
+337.5 tap 2
+337.5 tap 3
+339 tap 1
+339 tap 4
+340 tap 2
+340 tap 3
+341.5 tap 1
+341.5 tap 4
+343 tap 2
+343 tap 3
+344 hold 4 3
+347 tap 2
+348 hold 2 4
+352 hold 1 4
+352 hold 4 4
+360 hold 1 4
+364 hold 4 4
+368 hold 3 4
+372 hold 2 4
+376 hold 1 4
+380 hold 4 4
+384 hold 3 4
+388 hold 2 4
+392 hold 1 4
+392 tap 3
+394 tap 3
+396 hold 4 4
+396 tap 2
+398 tap 2
+400 hold 3 4
+400 tap 1
+402 tap 1
+404 hold 2 4
+404 tap 4
+406 tap 4
+408 hold 1 4
+408 tap 3
+409 tap 3
+410 tap 3
+411 tap 3
+412 hold 4 4
+412 tap 2
+413 tap 2
+414 tap 2
+415 tap 2
+416 hold 3 4
+420 hold 2 3
+423 tap 1
+423.5 tap 2
+424 hold 1 3
+424 arc 1 1 1
+425 arc 5 5 1
+426 arc 1 1 1
+427 tap 2
+427.5 tap 1
+428 hold 2 3
+428 arc 1 1 1
+429 arc 5 5 1
+430 arc 1 1 1
+431 tap 1
+431.5 tap 2
+432 hold 1 6
+432 arc 1 1 1
+433 arc 5 5 1
+434 arc 1 1 1
+435 arc 5 5 1
+436 arc 1 1 1
+437 arc 5 5 1
+438 arc 1 1 1
+438.5 tap 2
+439 tap 1
+439.5 tap 2
+440 hold 1 2.5
+440 arc 1 1 1
+441 arc 5 5 1
+442 arc 1 1 1
+442.5 tap 2
+443 tap 1
+443.5 tap 2
+444 hold 1 2
+444 arc 1 1 1
+445 arc 5 5 1
+446 hold 2 2
+446 arc 1 1 1
+447 arc 5 5 1
+448 hold 1 1.5
+448 arc 1 1 1
+449 arc 5 5 1
+449.5 hold 2 1.5
+450 arc 1 1 1
+451 hold 1 4
+451 arc 1 1 1
+452 arc 5 5 1
+453 arc 1 1 1
+454 arc 5 5 1
+455 tap 2
+455 arc 1 1 1
+455.5 tap 1
+456 hold 2 3
+456 arc 1 1 1
+457 arc 5 5 1
+458 arc 1 1 1
+459 tap 1
+459.5 tap 2
+460 hold 1 3
+460 arc 1 1 1
+461 arc 5 5 1
+462 arc 1 1 1
+463 tap 2
+463.5 tap 1
+464 hold 2 6.5
+464 arc 1 1 1
+465 arc 5 5 1
+466 arc 1 1 1
+467 arc 5 5 1
+468 arc 1 1 1
+469 arc 5 5 1
+470 arc 1 1 1
+471 tap 2
+471 arc 5 5 1
+471.5 tap 1
+472 hold 2 3
+472 arc 1 2 1.5
+473.5 arc 5 4 1.5
+475 tap 1
+475 arc 1 2 1.5
+475.5 tap 2
+476 hold 1 2
+476.5 arc 5 4 1.5
+478 hold 2 2
+478 arc 1 1 1.5
+480 tap 4
+481.5 tap 3
+483 tap 2
+488 tap 2
+488 tap 3
+488 tap 4
+488.5 tap 2
+488.5 tap 3
+488.5 tap 4
+489.5 tap 1
+489.5 tap 3
+489.5 tap 4
+490 tap 1
+490 tap 3
+490 tap 4
+491 tap 1
+491 tap 2
+491 tap 4
+491.5 tap 1
+491.5 tap 2
+491.5 tap 4
+492.5 tap 1
+492.5 tap 2
+492.5 tap 3
+493 tap 1
+493 tap 2
+493 tap 3
+494 tap 2
+494 tap 3
+494 tap 4
+494.5 tap 2
+494.5 tap 3
+494.5 tap 4
+495.5 tap 1
+495.5 tap 3
+495.5 tap 4
+496 tap 1
+496 tap 3
+496 tap 4
+497 tap 1
+497 tap 2
+497 tap 4
+497.5 tap 1
+497.5 tap 2
+497.5 tap 4
+498.5 tap 1
+498.5 tap 2
+498.5 tap 3
+499 tap 1
+499 tap 2
+499 tap 3
+500 tap 2
+500 tap 3
+500 tap 4
+500.5 tap 2
+500.5 tap 3
+500.5 tap 4
+501.5 tap 1
+501.5 tap 3
+501.5 tap 4
+502 tap 1
+502 tap 3
+502 tap 4
+502.5 tap 1
+502.5 tap 3
+502.5 tap 4
+503 tap 1
+503 tap 3
+503 tap 4
+503.5 tap 1
+503.5 tap 3
+503.5 tap 4
+504.5 tap 1
+503.5 tap 2
+504.5 tap 4
+505 tap 1
+505 tap 2
+505 tap 4
+506 tap 1
+506 tap 2
+506 tap 3
+506.5 tap 1
+506.5 tap 2
+506.5 tap 3
+507.5 tap 2
+507.5 tap 3
+507.5 tap 4
+508 tap 2
+508 tap 3
+508 tap 4
+509 tap 1
+509 tap 3
+509 tap 4
+509.5 tap 1
+509.5 tap 3
+509.5 tap 4
+510.5 tap 1
+510.5 tap 2
+510.5 tap 4
+511 tap 1
+511 tap 2
+511 tap 4
+512 tap 1
+512 tap 2
+512 tap 3
+512.5 tap 1
+512.5 tap 2
+512.5 tap 3
+513.5 tap 2
+513.5 tap 3
+513.5 tap 4
+514 tap 2
+514 tap 3
+514 tap 4
+515 tap 1
+515 tap 3
+515 tap 4
+515.5 tap 1
+515.5 tap 3
+515.5 tap 4
+516.5 tap 1
+516.5 tap 2
+516.5 tap 4
+517 tap 1
+517 tap 2
+517 tap 4
+517.5 tap 1
+517.5 tap 2
+517.5 tap 4
+518 tap 1
+518 tap 2
+518 tap 4
+518.5 tap 1
+518.5 tap 2
+518.5 tap 4
+519 tap 1
+519 tap 2
+519 tap 4
+519.5 tap 1
+519.5 tap 2
+519.5 tap 4
+524 arc 5 1 0.5

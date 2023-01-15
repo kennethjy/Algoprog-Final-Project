@@ -96,11 +96,10 @@ def main():
             if points[0][1] >= settings.judge_line + 10 >= points[3][1]:
                 left = gfs.get_x_in_line(settings.judge_line + 10, [points[0], points[3]])
                 right = gfs.get_x_in_line(settings.judge_line + 10, [points[1], points[2]])
-                if left <= mouse.position <= right:
+                if left - 25 <= mouse.position <= right + 25:
                     notes[5].is_hit = True
                 else:
                     notes[5].is_hit = False
-
 
         # filling screen with white background
         screen.fill((255, 255, 255))
@@ -164,6 +163,11 @@ def menu(prev):
     # draw pause menu
     polygon = [screen.get_rect().topleft, screen.get_rect().topright, screen.get_rect().bottomright, screen.get_rect().bottomleft]
     pygame.draw.polygon(screen, (150, 150, 150), polygon)
+    font = pygame.font.SysFont(None, 48)
+    text = font.render("Press Esc to resume", True, (0, 0, 0))
+    rect = text.get_rect()
+    rect.midtop = (600, 350)
+    screen.blit(text, rect)
     pygame.display.update()
 
     # waiting for inputs

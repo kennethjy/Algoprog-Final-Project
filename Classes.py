@@ -25,7 +25,7 @@ class Settings:
                 if note[1] == "hold":
                     self.notes.append(Hold(int(float(note[0]) * 60000 / self.bpm) + self.offset, int(note[2]), int(float(note[3]) * 60000 / self.bpm)))
                 if note[1] == "arc":
-                    self.notes.append(Arc(int(float(note[0]) * 60000 / self.bpm) + self.offset, int(note[2]), int(note[3]), int(float(note[3]) * 60000 / self.bpm)))
+                    self.notes.append(Arc(int(float(note[0]) * 60000 / self.bpm) + self.offset, int(note[2]), int(note[3]), int(float(note[4]) * 60000 / self.bpm)))
         self.file.close()
 
         self.windowed = (1200, 800)
@@ -105,8 +105,8 @@ class Arc(Note):
 class Mouse:
     def __init__(self, settings: Settings):
         self.position = settings.lanes[0] + settings.lanes[1][0] + settings.lanes[1][0]
-        self.max_left = settings.lanes[0] - settings.lanes[1][0]
-        self.max_right = settings.lanes[0] + (settings.lanes[1][0] * 5)
+        self.max_left = settings.lanes[0]
+        self.max_right = settings.lanes[0] + (settings.lanes[1][0] * 4)
 
     def move(self, value):
         if self.max_left < self.position + value < self.max_right:
