@@ -16,17 +16,29 @@ def draw_lanes(settings, screen):
     pygame.draw.line(screen, (0, 0, 0), (settings.lanes[0], settings.judge_line), (current_x, settings.judge_line), 2)
 
 
-def draw_note(screen, rect):
+def draw_note(screen, rect, is_hit=True):
     if type(rect) == pygame.Rect:
         pygame.draw.rect(screen, (0, 0, 0), rect)
+        if not is_hit:
+            pygame.draw.rect(screen, (150, 150, 150), rect)
     else:
-        pygame.draw.polygon(screen, (150, 150, 150), rect)
-        pygame.draw.polygon(screen, (0, 0, 0), rect, 2)
+        if is_hit:
+            pygame.draw.polygon(screen, (150, 150, 150), rect)
+            pygame.draw.polygon(screen, (0, 0, 0), rect, 2)
+        else:
+            pygame.draw.polygon(screen, (150, 0, 0), rect)
+            pygame.draw.polygon(screen, (255, 0, 0), rect, 2)
 
 
 def get_bottom_notes(note_list):
     bottom_notes = {}
     for note in note_list:
+        if note.lane == 5:
+            if 5 in bottom_notes:
+                if note.time < bottom_notes[note.lane].time:
+                    bottom_notes[note.lane] = note
+            else:
+                bottom_notes[note.lane] = note
         if note.lane in bottom_notes:
             if note.time < bottom_notes[note.lane].time and abs(note.time) < 150:
                 bottom_notes[note.lane] = note
@@ -34,3 +46,8 @@ def get_bottom_notes(note_list):
             if abs(note.time) < 150:
                 bottom_notes[note.lane] = note
     return bottom_notes
+
+
+def get_x_in_line(y, line):
+    return line[0][0] + (y - line[0][1]) * (line[1][0] - line[0][0]) / (line[1][1] - line[0][1])
+

@@ -1,5 +1,5 @@
 import pygame
-from Classes import Settings, Tap, Hold, Mouse
+from Classes import Settings, Tap, Hold, Arc, Mouse
 import gfs
 
 # initializing pygame and classes
@@ -16,6 +16,7 @@ pygame.mixer.init()
 song = pygame.mixer.Sound("Chronomia.mp3")
 tap = pygame.mixer.Sound("tap.wav")
 to_draw = []
+held = []
 
 
 def main():
@@ -50,13 +51,34 @@ def main():
                     prev = menu(prev)
                     if run:
                         pygame.event.set_grab(True)
+            if event.type == pygame.KEYUP:
+                if event.key == pygame.K_f:
+                    for i in held:
+                        if i.lane == 1:
+                            held.remove(i)
+                            i.is_hit = False
+                if event.key == pygame.K_g:
+                    for i in held:
+                        if i.lane == 2:
+                            held.remove(i)
+                            i.is_hit = False
+                if event.key == pygame.K_h:
+                    for i in held:
+                        if i.lane == 3:
+                            held.remove(i)
+                            i.is_hit = False
+                if event.key == pygame.K_j:
+                    for i in held:
+                        if i.lane == 4:
+                            held.remove(i)
+                            i.is_hit = False
         # immediately ends the program if run is set to false
         if not run:
             break
 
         # code to check for tapped notes if a keydown event is detected
+        notes: dict = gfs.get_bottom_notes(to_draw)
         if True in pressed_lanes:
-            notes: dict = gfs.get_bottom_notes(to_draw)
             for lane in range(4):
                 if pressed_lanes[lane]:
                     if notes.get(lane + 1):
@@ -68,6 +90,17 @@ def main():
                             tap.stop()
                             tap.play()
                             notes[lane + 1].is_hit = True
+                            held.append(notes[lane + 1])
+        if notes.get(5):
+            points = notes[5].get_rect(settings)
+            if points[0][1] >= settings.judge_line + 10 >= points[3][1]:
+                left = gfs.get_x_in_line(settings.judge_line + 10, [points[0], points[3]])
+                right = gfs.get_x_in_line(settings.judge_line + 10, [points[1], points[2]])
+                if left <= mouse.position <= right:
+                    notes[5].is_hit = True
+                else:
+                    notes[5].is_hit = False
+
 
         # filling screen with white background
         screen.fill((255, 255, 255))
@@ -81,7 +114,7 @@ def main():
         x, y = pygame.mouse.get_rel()
         mouse.move(x)
 
-        # draw all notes to be drawn, and deletes them if they go out of the screen
+        # deletes notes if they go out of the screen
         for note in to_draw:
             if type(note) == Tap:
                 if note.time <= -150:
@@ -89,11 +122,16 @@ def main():
             if type(note) == Hold:
                 if note.time + note.length <= -150:
                     to_draw.remove(note)
-
+                if note.time + note.length <= 0 and note in held:
+                    held.remove(note)
+                    to_draw.remove(note)
+            if type(note) == Arc:
+                if note.time + note.duration <= -150:
+                    to_draw.remove(note)
             else:
                 break
 
-        # moving all the notes down
+        # moving notes to draw to to_draw list
         for note in settings.notes:
             note.update(diff)
             if note.time <= 800 and note not in to_draw:
@@ -102,7 +140,10 @@ def main():
 
         # drawing all visible notes and moving them all down
         for note in to_draw:
-            gfs.draw_note(screen, note.get_rect(settings))
+            if type(note) == Tap:
+                gfs.draw_note(screen, note.get_rect(settings))
+            else:
+                gfs.draw_note(screen, note.get_rect(settings), note.is_hit)
             note.update(diff)
 
         # draw lane boundaries and mouse cursor

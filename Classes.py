@@ -84,6 +84,7 @@ class Arc(Note):
         self.lane_start = lane_start
         self.lane_end = lane_end
         self.duration = duration
+        self.is_hit = True
 
     def get_rect(self, settings):
         x_pos_start = settings.lanes[0]

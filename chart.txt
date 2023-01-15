@@ -3,7 +3,6 @@ offset=4000
 bpm=227
 
 0 tap 2
-0 arc 1 5 2
 4 tap 3
 5.5 tap 1
 7 tap 3
