@@ -36,7 +36,7 @@ class Settings:
         self.judge_line = 700
 
         self.amounts = [0, 0, 0, 0]
-        self.score = 0
+        self.combo = 0
 
 
 class Note:
@@ -86,7 +86,7 @@ class Arc(Note):
         self.lane = 5
         self.lane_start = lane_start
         self.lane_end = lane_end
-        self.duration = duration
+        self.length = duration
         self.is_hit = True
 
     def get_rect(self, settings):
@@ -100,8 +100,8 @@ class Arc(Note):
 
         points = [(x_pos_start - 25, 700 - self.time),
                   (x_pos_start + 25, 700 - self.time),
-                  (x_pos_end + 25, 700 - self.time - self.duration),
-                  (x_pos_end - 25, 700 - self.time - self.duration)]
+                  (x_pos_end + 25, 700 - self.time - self.length),
+                  (x_pos_end - 25, 700 - self.time - self.length)]
         return points
 
 
@@ -114,6 +114,11 @@ class Mouse:
     def move(self, value):
         if self.max_left < self.position + value < self.max_right:
             self.position += value
+        else:
+            if value < 0:
+                self.position = self.max_left + 1
+            if value > 0:
+                self.position = self.max_right - 1
 
     def get_rect(self, settings: Settings):
         rect = pygame.rect.Rect(0, 0, 30, 40)

@@ -90,21 +90,28 @@ def main():
                             to_draw.remove(notes[lane + 1])
                             if abs(notes[lane + 1].time) <= 50:
                                 settings.amounts[0] += 1
+                                settings.combo += 1
                             elif abs(notes[lane + 1].time) <= 100:
                                 settings.amounts[1] += 1
+                                settings.combo += 1
                             else:
                                 settings.amounts[2] += 1
+                                settings.combo = 0
                         if type(notes[lane + 1]) == Hold:
                             tap.stop()
                             tap.play()
                             notes[lane + 1].is_hit = True
                             held.append(notes[lane + 1])
+                            holds.append(notes[lane + 1])
                             if abs(notes[lane + 1].time) <= 50:
                                 settings.amounts[0] += 1
+                                settings.combo += 1
                             elif abs(notes[lane + 1].time) <= 100:
                                 settings.amounts[1] += 1
+                                settings.combo += 1
                             else:
                                 settings.amounts[2] += 1
+                                settings.combo = 0
 
         # code to append hold notes into holds
         for lane in range(4):
@@ -141,7 +148,10 @@ def main():
         if current > beat_no * 60000 / settings.bpm:
             beat_no += 1
             settings.amounts[0] += len(held)
+            settings.combo += len(held)
             settings.amounts[3] += len(holds) - len(held)
+            if len(holds) > len(held):
+                settings.combo = 0
 
         # moving arc catcher (square at the bottom of the screen)
         x, y = pygame.mouse.get_rel()
@@ -152,23 +162,34 @@ def main():
             if type(note) == Tap:
                 if note.time <= -150:
                     to_draw.remove(note)
+                    if note in holds:
+                        holds.remove(note)
                     settings.amounts[3] += 1
+                    settings.combo = 0
             if type(note) == Hold:
                 if note.time + note.length <= -150:
                     to_draw.remove(note)
-                    holds.remove(note)
                     settings.amounts[3] += 1
-                if note.time + note.length <= 0 and note in held:
+                    settings.combo = 0
+                if note.time + note.length <= 90 and note in held:
                     held.remove(note)
                     holds.remove(note)
                     to_draw.remove(note)
             if type(note) == Arc:
-                if note.time + note.duration <= -150:
+                if note.time + note.length <= -150:
                     to_draw.remove(note)
                     if note in held:
                         held.remove(note)
             else:
                 break
+
+        # deleting notes in holds automatically
+        for note in holds:
+            if note.time + note.length <= -150:
+                holds.remove(note)
+            elif note not in to_draw:
+                print(note)
+                holds.remove(note)
 
         # moving notes to draw to to_draw list
         for note in settings.notes:
@@ -185,9 +206,10 @@ def main():
                 gfs.draw_note(screen, note.get_rect(settings), note.is_hit)
             note.update(diff)
 
-        # draw lane boundaries and mouse cursor
+        # draw lane boundaries, mouse cursor, and stats
         gfs.draw_lanes(settings, screen)
         pygame.draw.rect(screen, (0, 0, 0), mouse.get_rect(settings))
+        gfs.draw_stats(screen, settings)
 
         # update display
         pygame.display.update()
