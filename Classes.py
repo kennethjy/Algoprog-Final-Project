@@ -98,10 +98,10 @@ class Arc(Note):
         for i in range(self.lane_end - 1):
             x_pos_end += settings.lanes[1][i]
 
-        points = [(x_pos_start - 25, 700 - self.time),
-                  (x_pos_start + 25, 700 - self.time),
-                  (x_pos_end + 25, 700 - self.time - self.length),
-                  (x_pos_end - 25, 700 - self.time - self.length)]
+        points = [(x_pos_start - 35, 700 - self.time),
+                  (x_pos_start + 35, 700 - self.time),
+                  (x_pos_end + 35, 700 - self.time - self.length),
+                  (x_pos_end - 35, 700 - self.time - self.length)]
         return points
 
 
