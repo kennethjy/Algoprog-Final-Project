@@ -23,7 +23,7 @@ class Settings:
                 if note[1] == "tap":
                     self.notes.append(Tap(int(float(note[0]) * 60000 / self.bpm) + self.offset, int(note[2])))
                 if note[1] == "hold":
-                    self.notes.append(Hold(int(float(note[0]) * 60000 / self.bpm) + self.offset, int(note[2]), int(float(note[3]) * 60000 / self.bpm)))
+                    self.notes.append(Hold(int(float(note[0]) * 60000 / self.bpm) + self.offset, int(note[2]), int(float(note[3]) * 60000 / self.bpm), int((float(note[0]) % 1) * 60000 / self.bpm)))
                 if note[1] == "arc":
                     self.notes.append(Arc(int(float(note[0]) * 60000 / self.bpm) + self.offset, int(note[2]), int(note[3]), int(float(note[4]) * 60000 / self.bpm)))
         self.file.close()
@@ -62,10 +62,11 @@ class Tap(Note):
 
 
 class Hold(Note):
-    def __init__(self, time, lane, duration):
+    def __init__(self, time, lane, duration, difference_from_beat):
         super().__init__(time)
         self.lane = lane
         self.length = duration
+        self.diff = difference_from_beat
         self.is_hit = False
 
     def get_rect(self, settings):

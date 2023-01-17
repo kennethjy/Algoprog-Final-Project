@@ -79,4 +79,9 @@ def draw_stats(screen, settings):
     screen.blit(combo, rect_c)
 
 
-
+def hold_offset(offset, time):
+    if time > offset:
+        return -1
+    if time < offset - 1:
+        return 1
+    return 0

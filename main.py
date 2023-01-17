@@ -101,24 +101,30 @@ def main():
                             tap.stop()
                             tap.play()
                             notes[lane + 1].is_hit = True
-                            held.append(notes[lane + 1])
-                            holds.append(notes[lane + 1])
+                            if notes[lane + 1] not in held:
+                                held.append(notes[lane + 1])
+                            if notes[lane + 1] not in holds:
+                                holds.append(notes[lane + 1])
                             if abs(notes[lane + 1].time) <= 50:
                                 settings.amounts[0] += 1
                                 settings.combo += 1
+                                settings.amounts[0] += gfs.hold_offset(notes[lane + 1].diff, notes[lane + 1].time)
                             elif abs(notes[lane + 1].time) <= 100:
                                 settings.amounts[1] += 1
                                 settings.combo += 1
+                                settings.amounts[0] += gfs.hold_offset(notes[lane + 1].diff, notes[lane + 1].time)
                             else:
                                 settings.amounts[2] += 1
                                 settings.combo = 0
+                                settings.amounts[0] += gfs.hold_offset(notes[lane + 1].diff, notes[lane + 1].time)
 
         # code to append hold notes into holds
         for lane in range(4):
             if notes.get(lane + 1):
-                if type(notes[lane + 1]) == Hold and notes[lane + 1].time < 0:
+                if type(notes[lane + 1]) == Hold and notes[lane + 1].time < -150:
                     if notes[lane + 1] not in holds:
                         holds.append(notes[lane + 1])
+                        settings.amounts[3] += gfs.hold_offset(notes[lane + 1].diff, notes[lane + 1].time)
 
         # code to check mouse position for arcs
         if notes.get(5):
