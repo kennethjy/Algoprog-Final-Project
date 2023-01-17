@@ -27,6 +27,7 @@ def main():
     song.play()
     prev = 0
     pygame.event.set_grab(True)
+    pygame.mouse.set_visible(False)
 
     while run:
         # setting array to keep track of keydown events
@@ -214,7 +215,7 @@ def main():
 
         # draw lane boundaries, mouse cursor, and stats
         gfs.draw_lanes(settings, screen)
-        pygame.draw.rect(screen, (0, 0, 0), mouse.get_rect(settings))
+        gfs.draw_cursor(screen, mouse.get_rect(settings))
         gfs.draw_stats(screen, settings)
 
         # update display
@@ -225,6 +226,7 @@ def menu(prev):
     global run
     # detaches inputs from program so mouse can be moved out, pauses song, and gets current time
     pygame.event.set_grab(False)
+    pygame.mouse.set_visible(True)
     pygame.mixer.pause()
     current = pygame.time.get_ticks()
 

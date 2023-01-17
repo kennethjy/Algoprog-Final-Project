@@ -122,8 +122,9 @@ class Mouse:
                 self.position = self.max_right - 1
 
     def get_rect(self, settings: Settings):
-        rect = pygame.rect.Rect(0, 0, 30, 40)
-        rect.midtop = (self.position, settings.judge_line + 10)
-        return rect
+        points = [(self.position, settings.judge_line + 10),
+                  (self.position - 15, settings.judge_line + 50),
+                  (self.position + 15, settings.judge_line + 50)]
+        return points
 
 

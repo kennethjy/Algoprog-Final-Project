@@ -371,12 +371,14 @@ bpm=227
 425 arc 5 5 1
 426 arc 1 1 1
 427 tap 2
+427 arc 5 5 1
 427.5 tap 1
 428 hold 2 3
 428 arc 1 1 1
 429 arc 5 5 1
 430 arc 1 1 1
 431 tap 1
+431 arc 5 5 1
 431.5 tap 2
 432 hold 1 6
 432 arc 1 1 1
@@ -388,6 +390,7 @@ bpm=227
 438 arc 1 1 1
 438.5 tap 2
 439 tap 1
+439 arc 5 5 1
 439.5 tap 2
 440 hold 1 2.5
 440 arc 1 1 1
@@ -395,6 +398,7 @@ bpm=227
 442 arc 1 1 1
 442.5 tap 2
 443 tap 1
+443 arc 5 5 1
 443.5 tap 2
 444 hold 1 2
 444 arc 1 1 1
@@ -408,24 +412,26 @@ bpm=227
 449.5 hold 2 1.5
 450 arc 1 1 1
 451 hold 1 4
-451 arc 1 1 1
-452 arc 5 5 1
-453 arc 1 1 1
-454 arc 5 5 1
+451 arc 5 5 1
+452 arc 1 1 1
+453 arc 5 5 1
+454 arc 1 1 1
 455 tap 2
-455 arc 1 1 1
+455 arc 5 5 1
 455.5 tap 1
 456 hold 2 3
 456 arc 1 1 1
 457 arc 5 5 1
 458 arc 1 1 1
 459 tap 1
+459 arc 5 5 1
 459.5 tap 2
 460 hold 1 3
 460 arc 1 1 1
 461 arc 5 5 1
 462 arc 1 1 1
 463 tap 2
+463 arc 5 5 1
 463.5 tap 1
 464 hold 2 6.5
 464 arc 1 1 1

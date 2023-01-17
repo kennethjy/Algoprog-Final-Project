@@ -30,6 +30,10 @@ def draw_note(screen, rect, is_hit=True):
             pygame.draw.polygon(screen, (255, 0, 0), rect, 2)
 
 
+def draw_cursor(screen, points):
+    pygame.draw.polygon(screen, (0, 0, 0), points)
+
+
 def get_bottom_notes(note_list):
     bottom_notes = {}
     for note in note_list:
