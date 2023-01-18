@@ -29,9 +29,7 @@ class Settings:
         self.file.close()
 
         self.windowed = (1200, 800)
-        self.full_screen = pygame.FULLSCREEN
         self.bg_color = (255, 255, 255)
-        self.bg = pygame.rect.Rect(0, 0, self.windowed[0], self.windowed[1])
         self.lanes = (500, [50, 50, 50, 50])
         self.judge_line = 700
 
