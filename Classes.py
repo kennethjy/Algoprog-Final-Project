@@ -103,6 +103,17 @@ class Arc(Note):
                   (x_pos_start + 35, 700 - self.time),
                   (x_pos_end + 35, 700 - self.time - self.length),
                   (x_pos_end - 35, 700 - self.time - self.length)]
+        if self.length == 0:
+            if x_pos_start < x_pos_end:
+                points = [(x_pos_start - 35, 700 - self.time - 25),
+                          (x_pos_start - 35, 700 - self.time + 25),
+                          (x_pos_end + 35, 700 - self.time + 25),
+                          (x_pos_end + 35, 700 - self.time - 25)]
+            else:
+                points = [(x_pos_start + 35, 700 - self.time - 25),
+                          (x_pos_start + 35, 700 - self.time + 25),
+                          (x_pos_end - 35, 700 - self.time + 25),
+                          (x_pos_end - 35, 700 - self.time - 25)]
         return points
 
 
