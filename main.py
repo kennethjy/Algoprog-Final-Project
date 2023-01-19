@@ -252,6 +252,8 @@ def menu(prev):
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_ESCAPE:
                     pygame.mixer.unpause()
+                    pygame.event.set_grab(True)
+                    pygame.mouse.set_visible(False)
                     return pygame.time.get_ticks() - (current - prev)
 
 
